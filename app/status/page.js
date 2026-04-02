@@ -88,7 +88,12 @@ function StatusPage() {
             <div className="th">Status</div>
             <div className="th">Recruiter</div>
           </div>
-          {applications.map((application) => (
+          {applications.length === 0 ? (
+            <div className="empty-state">
+              <h3>Nothing here yet</h3>
+              <p>You haven't applied to any jobs. <Link href="/explore-jobs">Browse open roles</Link></p>
+            </div>
+          ) : applications.map((application) => (
             <div key={application._id} className="table-row">
               <div className="td">{formatDate(application.createdAt)}</div>
               <div className="td"><Link href={`/explore-jobs/${application.jobId}`}>{application.jobName} (#{application.jobId.slice(-4)})</Link></div>
@@ -103,7 +108,12 @@ function StatusPage() {
         </div>
 
         <div className="applications-cards">
-          {applications.map((application) => (
+          {applications.length === 0 ? (
+            <div className="empty-state">
+              <h3>Nothing here yet</h3>
+              <p>You haven't applied to any jobs. <Link href="/explore-jobs">Browse open roles</Link></p>
+            </div>
+          ) : applications.map((application) => (
             <div key={application._id} className="application-card">
               <div className="card-content">
                 <div className="field">

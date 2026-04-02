@@ -368,7 +368,7 @@ const JobApplicationPage = ({ params }) => {
     <div className="job-application-wp">
       <div className="spotlight-bar container-pad">
         <div className="left">
-          <h1>Apply Now</h1>
+          <h1>Apply Now{job ? ` — ${job.name}` : ''}</h1>
         </div>
       </div>
       <div className="submit-main-body container-pad">
