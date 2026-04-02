@@ -8,7 +8,6 @@ import ExperienceLevelStep from './components/ExperienceLevelStep';
 import AvailabilityStep from './components/AvailabilityStep';
 import ExpertiseStep from './components/ExpertiseStep';
 import ExpectedCtcStep from './components/ExpectedCtcStep';
-import DocumentsStep from './components/DocumentsStep';
 import AccountStep from './components/AccountStep';
 import Loader from '@/app/components/UI/Loader';
 
@@ -18,8 +17,7 @@ const STEP_NAMES = {
   3: 'experience_level',
   4: 'expected_ctc',
   5: 'availability',
-  6: 'documents',
-  7: 'account'
+  6: 'account'
 };
 
 const SignUpPage = () => {
@@ -39,12 +37,6 @@ const SignUpPage = () => {
     areaOfExpertise: [],
     minExpectedCtc: 0,
     maxExpectedCtc: 5,
-    resumeFileId: null,
-    portfolioFileId: null,
-    additionalFileIds: [],
-    resume: null,
-    portfolio: null,
-    additionalFiles: [],
     name: '',
     email: '',
     mobile: '',
@@ -128,7 +120,7 @@ const SignUpPage = () => {
   const handleSkip = () => {
     capture('signup_skipped_quiz', { from_step: currentStep });
     setWasSkipped(true);
-    setCurrentStep(7);
+    setCurrentStep(6);
   };
 
   const updateFormData = (field, value) => {
@@ -206,8 +198,7 @@ const SignUpPage = () => {
     3: ExperienceLevelStep,
     4: ExpectedCtcStep,
     5: AvailabilityStep,
-    6: DocumentsStep,
-    7: AccountStep
+    6: AccountStep
   };
 
   if (loading) return <Loader />;
@@ -238,9 +229,9 @@ const SignUpPage = () => {
       <div className="inner">
         <div className="main-cont">
           <div className="progress-steps-w">
-            <span>Step {currentStep} of 7</span>
+            <span>Step {currentStep} of 6</span>
           </div>
-          {currentStep < 7 && (
+          {currentStep < 6 && (
             <div className="skip-woa">
               <button onClick={handleSkip} className="skip-btn">
                 Skip Quiz
@@ -266,8 +257,8 @@ const SignUpPage = () => {
             updateFormData={updateFormData}
             onNext={handleNext}
             onBack={currentStep > 1 && !wasSkipped ? handleBack : undefined}
-            onSubmit={currentStep === 7 ? handleSubmit : undefined}
-            apiError={currentStep === 7 ? apiError : null}
+            onSubmit={currentStep === 6 ? handleSubmit : undefined}
+            apiError={currentStep === 6 ? apiError : null}
             isLoading={isLoading}
             message={message}
           />
