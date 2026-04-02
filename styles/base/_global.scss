@@ -1,0 +1,85 @@
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: var(--font-livvic);
+  color: $black;
+  background: $background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-width: 300px;
+  overflow-x: hidden;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  // -youbkit-touch-callout: none; /* iOS Safari */
+  // -youbkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+  // -moz-user-select: none;    /* Firefox */
+  // -ms-user-select: none;        /* IE 10+ and Edge */
+  // user-select: none;
+  &.scroll-lock{
+    overflow: hidden;
+  }
+}
+
+
+main{
+  min-height: 100vh;
+}
+
+.container-pad{
+  padding: 0 140px;
+  @media only screen and (max-width: 1100px){
+    padding: 0 30px;
+  }
+  @media only screen and (max-width: 991px){
+    padding: 0 16px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.desktopOnly{
+  display: block;
+  @media only screen and (max-width: 991px){
+      display: none;
+  }
+}
+.mobileOnly{
+  display: none;
+  @media only screen and (max-width: 991px){
+      display: block;
+  }
+}
+
+@media only screen and (min-width: 767px){}
+
+@media only screen and (min-width: 992px){}
+
+@media only screen and (min-width : 1200px) {}
+
+@media only screen and (min-width : 1600px) {}
+
+/*reset variables*/
+.noDisplay{ display: none;}
+
+/* iPad portrait mode */
+@media only screen and (min-width: 960px) and (max-width: 1024px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* Mobile layout css */
+@media only screen and (max-width: 768px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 768px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}

@@ -1,0 +1,50 @@
+.loader-p-cont{
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .loader-spin {
+    width: 36px;
+    height: 36px;
+    border: 4px solid $blue;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+
+.loader-spin-smaller{
+  width: 20px;
+  height: 20px;
+  border: 2px solid $yellow;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.load-more-section{
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.file-size-limit{
+  display: flex;
+  margin-bottom: 5px;
+}

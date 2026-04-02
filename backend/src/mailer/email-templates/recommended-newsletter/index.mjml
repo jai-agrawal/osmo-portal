@@ -1,0 +1,150 @@
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to Osmo</mj-title>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Trebuchet MS, Arial, sans-serif" color="#29406B" />
+      <mj-section background-color="#FAF6EE" />
+    </mj-attributes>
+    <mj-style>
+      .social-icon {
+        margin: 0 8px;
+      }
+      .link-text {
+        color: #29406B;
+        text-decoration: underline;
+      }
+      .footer-text {
+        color: #FAF6EE;
+        font-size: 14px;
+      }
+      .rounded-section {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body>
+    <mj-section padding="10px 0px"  background-color="#FFFFFF">
+      <mj-column>
+        <mj-table width="100%">
+          <tr>
+            <td style="width: 50%; text-align: left;">
+              <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/osmo-logo.png" alt="Osmo" width="90px" />
+            </td>
+            <td style="width: 50%; text-align: right;">
+              <a href="#" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/twitter.png" width="24" height="24" alt="Twitter" />
+              </a>
+              <a href="https://www.facebook.com/osmoin/" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/facebook.png" width="24" height="24" alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/osmo.in" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/instagram.png" width="24" height="24" alt="Instagram" />
+              </a>
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper padding="30px 30px 30px 30px" background-color="#FAF6EE">
+      <mj-section background-color="#ffffff" padding="10px 0 20px 0" border-radius="12px">
+        <mj-column>
+          <mj-image src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/spotlight.png" alt="Welcome Illustration" width="400px" />
+          <mj-text align="center" font-size="24px" font-weight="600" padding-top="10px">
+            ✨ This Week's Job Picks for You ✨
+          </mj-text>
+          <mj-text align="center" font-size="14px" font-weight="400" padding-top="0px" >
+            <div style="line-height:1.5;">
+              Hi <%= userName %>, we've handpicked a few new opportunities that match your skills and interests. Take a look and see what excites you—your next role might be just a click away!
+            </div>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <% jobs.forEach(job => { %>
+    <mj-wrapper padding="0 30px 30px 30px" background-color="#FAF6EE">
+      <mj-section background-color="#ffffff" padding="16px 0" border-radius="12px">
+        <mj-column width="100%">
+          <mj-text font-size="18px" font-weight="600" padding-bottom="3px">
+            <%= job.name %>
+          </mj-text>
+          <mj-text font-size="12px" text-transform="uppercase" letter-spacing="1px" color="#29406B" padding-top="0" padding-bottom="6px">
+            <%= job.location %> | <%= job.workType %>
+          </mj-text>
+          <mj-text font-size="14px" font-weight="600" color="#2BBCC2" padding-bottom="10px">
+            <%= job.roleTypes.join(', ') %>
+          </mj-text>
+          <mj-text font-size="14px" line-height="22px" padding-bottom="14px">
+            <%= job.jobDescription && job.jobDescription.companyOverview ? stripHtml(job.jobDescription.companyOverview) : '' %>
+          </mj-text>
+        </mj-column>
+        <mj-group width="100%">
+          <mj-column>
+            <mj-text font-size="12px">
+              <% if (job.createdAt > new Date(Date.now() - 1000 * 60 * 60 * 24 * 30)) { %>
+                <span style="background:#FF6B5B;color:#ffffff;border-radius:4px;padding:4px 8px;font-weight:700;margin-right:8px;">NEW</span>
+              <% } %>
+              <span style="color:#6E7FA0;">Posted <%= Math.floor((Date.now() - new Date(job.createdAt).getTime()) / (1000 * 60 * 60 * 24)) %> days ago</span>
+            </mj-text>
+          </mj-column>
+          <mj-column>
+            <mj-button align="right" background-color="#29406B" color="#ffffff" border-radius="25px" font-size="16px" font-weight="500" inner-padding="10px 20px" href="https://www.jobsosmo.in/explore-jobs/<%= job._id %>">
+              View Job
+            </mj-button>
+          </mj-column>
+        </mj-group>
+      </mj-section>
+    </mj-wrapper>
+    <% }); %>
+
+    <mj-wrapper padding="30px 30px 30px 30px"  background-color="#FAF6EE">
+      <mj-section background-color="#ffffff" padding="20px 0px" border-radius="12px">
+        <mj-column>
+          <mj-text font-size="16px" line-height="24px" padding-bottom="10px">
+            Want to see more openings? New jobs are added every week—check them out below.
+          </mj-text>
+          <mj-button align="left" background-color="#29406B" color="#ffffff" border-radius="25px" font-size="16px" font-weight="500" inner-padding="10px 20px" href="https://www.jobsosmo.in/explore-jobs">
+            Explore Jobs
+          </mj-button>
+        </mj-column>
+        <mj-column>
+          <mj-image src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/img3.png" alt="Explore Jobs" />
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper padding="0 0px" background-color="#FAF6EE">
+      <mj-section padding="20px 0px 30px 10px" border-radius="12px">
+        <mj-column>
+          <mj-text font-size="16px" >
+            If any of these roles interest you, apply soon — and we’ll be back next with more recommendations!
+          </mj-text>
+          
+          <mj-text font-size="16px" padding-top="10px" font-weight="600">
+            Team Osmo
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-section background-color="#29406B" padding="30px 20px">
+      <mj-column>
+        <mj-text css-class="footer-text" align="center">
+          <div style="color: #FAF6EE; font-weight: 100; font-size: 14px; line-height:1.5; padding:0;">
+            Questions or FAQ? Contact us at <a href="mailto:hi@theosmo.in" style="color: #FAF6EE;">hi@theosmo.in</a>.
+          </div>
+        </mj-text>
+        <mj-text css-class="footer-text" align="center" padding-top="20px">
+          <div style="color: #FAF6EE; font-weight: 100; font-size: 14px; margin-bottom: 5px;line-height:1.5">
+            ©<%= year %> by Osmo
+          </div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml> 

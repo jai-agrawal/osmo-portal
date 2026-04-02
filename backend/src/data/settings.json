@@ -1,0 +1,132 @@
+{
+    "settings": {
+      "roleType": {
+        "isSingleChoice": true,
+        "label": "Role Type",
+        "options": [
+          "Branding",
+          "Content Writing",
+          "Graphic Design",
+          "Illustration",
+          "Marketing",
+          "Photography",
+          "Public Relations",
+          "Social Media Strategy",
+          "Videography",
+          "Video Editing"
+        ]
+      },
+      "jobLocation": {
+        "isSingleChoice": true,
+        "label": "Job Location",
+        "options": [
+          "Ahmedabad",
+          "Bangalore",
+          "Chennai",
+          "Delhi - NCR",
+          "Hyderabad",
+          "Kolkata",
+          "Mumbai",
+          "Remote"
+        ]
+      },
+      "jobType": {
+        "isSingleChoice": true,
+        "label": "Job Type",
+        "options": [
+          "Internship",
+          "Full-time",
+          "Part-time",
+          "Remote",
+          "Hybrid",
+          "Freelance / Project Based",
+          "Volunteer Work"
+        ]
+      },
+      "jobCategory": {
+        "isSingleChoice": true,
+        "label": "Job Category",
+        "options": [
+          "IT",
+          "Marketing",
+          "Sales",
+          "Engineering",
+          "Design"
+        ]
+      },
+      "experienceLevel": {
+        "isSingleChoice": true,
+        "label": "Experience Level",
+        "options": [
+          "Entry-Level - No Experience Required",
+          "Junior (1-2 years)",
+          "Mid-level (3-4 years)",
+          "Senior (5-8 years)",
+          "Expert (9+ years)"
+        ]
+      },
+      "workType": {
+        "isSingleChoice": true,
+        "label": "Work Type",
+        "options": [
+          "Remote",
+          "Hybrid",
+          "In-Person",
+          "Flexible"
+        ]
+      },
+      "workingDays": {
+        "isSingleChoice": true,
+        "label": "Working Days",
+        "options": [
+          "Monday to Friday",
+          "Monday to Saturday",
+          "Other"
+        ]
+      },
+      "candidateAvailability": {
+        "isSingleChoice": true,
+        "label": "Candidate Availability",
+        "options": [
+          "As soon as possible",
+          "In the next few months",
+          "Not Sure - will move for right role",
+          "Not looking, just curious"
+        ]
+      },
+      "areaOfExpertise": {
+        "isSingleChoice": true,
+        "label": "Area of Expertise",
+        "options": [
+          "Graphic Design",
+          "Marketing",
+          "Content Writing",
+          "Public Relations",
+          "Social Media",
+          "Business Development",
+          "Visual Merchandising",
+          "Sales",
+          "Styling",
+          "Videography",
+          "Photography"
+        ]
+      },
+      "expectedCtc": {
+        "isSingleChoice": true,
+        "label": "Expected CTC",
+        "options": [
+          "Under 1L",
+          "1-5 LPA",
+          "5-10 LPA",
+          "10-15 LPA",
+          "15-20 LPA",
+          "20-25 LPA",
+          "25-30 LPA",
+          "30-35 LPA",
+          "35-40 LPA",
+          "40-50 LPA",
+          "50 LPA +"
+        ]
+      }
+    }
+}

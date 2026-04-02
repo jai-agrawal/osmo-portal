@@ -1,0 +1,103 @@
+.header-w{
+  &.dark{
+    background-color: $blue;
+    padding: 20px 140px;
+    @media only screen and (max-width: 1100px){
+      padding: 20px 30px;
+    }
+    @include tab{
+      padding: 16px 16px !important;
+    }
+  }
+  .inner-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+      width: 130px;
+      position: relative;
+      z-index: 11;
+      @include tab{
+        width: 90px;
+      }
+      a{
+        width: 100%;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .nav-w{
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        position: relative;
+        z-index: 11;
+        @media (max-width: 991px) {
+          display: flex;
+        }
+        span {
+          width: 100%;
+          height: 2px;
+          background-color: $background;
+          transition: all 0.3s ease-in-out;
+        }
+        &.active {
+          span {
+            &:first-child {
+              transform: translateY(9px) rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:last-child {
+              transform: translateY(-9px) rotate(-45deg);
+            }
+          }
+        }
+      }
+      .nav-ul{
+        display: flex;
+        &:not(:only-child) {
+          @include tab{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: $blue;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            &.show {
+              display: flex;
+            }
+          }
+        }
+        .nav-li{
+          margin-left: 2rem;
+          font-size: 20px;
+          &:not(:only-child) {
+            @include tab{
+              margin: 15px 0;
+              font-size: 24px;
+            }
+          }
+          &.active{
+            border-bottom: $white solid 1px;
+          }
+          a{
+            color: $background;
+          }
+        }
+      }
+    }
+  }
+}

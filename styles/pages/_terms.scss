@@ -1,0 +1,81 @@
+.terms-page {
+  .spotlight-bar {
+    background-color: $blue;
+    color: white;
+    padding-top: 24px;
+    padding-bottom: 48px;
+    .content {
+      h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .last-updated {
+        font-size: 1rem;
+        font-weight: normal;
+        opacity: 0.9;
+        margin: 0;
+      }
+    }
+  }
+
+  .terms-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    .intro {
+      margin-bottom: 1.5rem;
+      a {
+        text-decoration: underline;
+        color: $blue;
+      }
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: $black;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    ul {
+      margin: 0 0 1rem;
+      padding-left: 1.5rem;
+      li {
+        margin-bottom: 0.35rem;
+      }
+    }
+
+    .contact-block {
+      margin-top: 0.5rem;
+      padding: 1rem;
+      background: #f5f5f5;
+      border-radius: 8px;
+      line-height: 1.8;
+      a {
+        text-decoration: underline;
+        color: $blue;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+      color: $blue;
+    }
+  }
+}

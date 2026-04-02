@@ -1,0 +1,63 @@
+@mixin link-style($color: black) {
+  --link-line-color: #{$color};
+}
+
+%link__wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+%link__line {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--link-line-color, black); // Use the variable or fallback to black
+  transition: transform 0.3s linear;
+}
+
+%link__line--visible {
+  transform: scaleX(1);
+  transform-origin: center center;
+}
+
+%link__line--hidden {
+  transform: scaleX(0);
+  transform-origin: center center;
+}
+
+%link {
+  @extend %link__wrapper;
+  display: inline-block;
+
+  &:after {
+    @extend %link__line;
+    @extend %link__line--visible;
+  }
+
+  &:hover {
+    &:after {
+      @extend %link__line--hidden;
+    }
+  }
+}
+
+%link--hidden {
+  @extend %link__wrapper;
+  display: inline-block;
+
+  &:after {
+    @extend %link__line;
+    @extend %link__line--hidden;
+  }
+
+  &:hover {
+    &:after {
+      @extend %link__line--visible;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to Osmo</mj-title>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Trebuchet MS, Arial, sans-serif" color="#29406B" />
+      <mj-section background-color="#FAF6EE" />
+    </mj-attributes>
+    <mj-style>
+      .social-icon {
+        margin: 0 8px;
+      }
+      .link-text {
+        color: #29406B;
+        text-decoration: underline;
+      }
+      .footer-text {
+        color: #FAF6EE;
+        font-size: 14px;
+      }
+      .rounded-section {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body>
+    <mj-section padding="10px 0px"  background-color="#FFFFFF">
+      <mj-column>
+        <mj-table width="100%">
+          <tr>
+            <td style="width: 50%; text-align: left;">
+              <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/osmo-logo.png" alt="Osmo" width="90px" />
+            </td>
+            <td style="width: 50%; text-align: right;">
+              <a href="#" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/twitter.png" width="24" height="24" alt="Twitter" />
+              </a>
+              <a href="https://www.facebook.com/osmoin/" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/facebook.png" width="24" height="24" alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/osmo.in" style="text-decoration: none; padding: 0 8px;">
+                <img src="https://osmo-prod.s3.ap-south-1.amazonaws.com/mailer-assets/instagram.png" width="24" height="24" alt="Instagram" />
+              </a>
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <mj-wrapper padding="30px 30px 30px 30px"  background-color="#FAF6EE">
+      <mj-section background-color="#ffffff" padding="20px 0px" border-radius="12px">
+        <mj-column>
+          <mj-text font-size="16px" padding-bottom="10px">
+            Dear <%= userName %>,
+          </mj-text>
+          <mj-text font-size="16px" line-height="24px" padding-bottom="10px">
+            We received a request to reset the password for your account at Osmo.
+          </mj-text>
+          <mj-text font-size="16px" line-height="24px" padding-bottom="10px">
+            To reset your password, click the link below:
+          </mj-text>
+          <mj-button align="left" background-color="#29406B" color="#ffffff" border-radius="25px" font-size="16px" font-weight="500" inner-padding="10px 20px" href="<%= resetPasswordUrl %>">
+            Reset Password Link
+          </mj-button>
+          <mj-text font-size="16px" line-height="24px" padding-bottom="10px">
+            If you didn't request this, please disregard this email. Your account is still secure.
+          </mj-text>
+          <mj-text font-size="16px" line-height="24px" padding-bottom="10px" font-weight="600">
+            Team Osmo
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-section background-color="#29406B" padding="30px 20px">
+      <mj-column>
+        <mj-text css-class="footer-text" align="center">
+          <div style="color: #FAF6EE; font-weight: 100; font-size: 14px; line-height:1.5; padding:0;">
+            Questions or FAQ? Contact us at <a href="mailto:hi@theosmo.in" style="color: #FAF6EE;">hi@theosmo.in</a>. 
+          </div>
+        </mj-text>
+        <mj-text css-class="footer-text" align="center" padding-top="20px">
+          <div style="color: #FAF6EE; font-weight: 100; font-size: 14px; margin-bottom: 5px;line-height:1.5">
+            ©<%= year %> by Osmo
+          </div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml> 

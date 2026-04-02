@@ -1,0 +1,352 @@
+.account-page{
+  margin-bottom: 54px;
+  .spotlight-bar{
+    padding-top: 24px;
+    padding-bottom: 48px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-color: $blue;
+    @include tab{
+      flex-direction: column;
+      padding-bottom: 24px;
+    }
+    .left{
+      width: 90%;
+      @include tab{
+        width: 100%;
+      }
+      h4{
+        font-size: 20px;
+        font-weight: 300;
+        color: $background;
+        margin-top: 8px;
+        @include tab{
+          font-size: 16px;
+        }
+      }
+      h1{
+        font-size: 52px;
+        color: $background;
+        @include tab{
+          font-size: 36px;
+        }
+      }
+    }
+    .right{
+      width: 10%;
+      text-align: right;
+      @include tab{
+        width: 100%;
+        text-align: left;
+        margin-top: 24px;
+      }
+    }
+  }
+  .account-form-w{
+    margin: 40px 0;
+    width: 100%;
+    form{
+      width: 100%;
+      outline: none;
+      border: 0;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+      fieldset{
+        grid-column: span 6;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        @include tab{
+          grid-column: span 12;
+        }
+        label{
+          font-size: 16px;
+          font-weight: 600;
+          color: $blue;
+          margin-bottom: 12px;
+        }
+        input{
+          background-color: $white;
+          padding: 12px 16px;
+          font-size: 16px;
+          font-weight: 300;
+          outline: none;
+          border: 0;
+          border-radius: 7px;
+        }
+      }
+      .cta-wat{
+        grid-column: span 12;
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        @include tab{
+          margin-top: 32px;
+        }
+        button{
+          width: 100%;
+          max-width: 492px;
+          padding: 16px 33px;
+          background-color: $yellow;
+          color: $white;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 2rem;
+          outline: none;
+          box-shadow: 0;
+          border: 0;
+          text-transform: uppercase;
+          cursor: pointer;
+          &.fill-none{
+            background-color: transparent;
+            border: $blue solid 2px;
+            color: $blue;
+          }
+          &.fill-blue{
+            background-color: $blue;
+            border: $blue solid 2px;
+            color: $background;
+          }
+          @include tab{
+            padding: 14px 24px;
+            font-size: 16px;
+          }
+          @include mobile{
+            padding: 12px 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.glb-a-nav{
+  text-align: center;
+  margin-top: 16px;
+  &.lefts{
+    text-align: left;
+  }
+  a{
+    color: $teal;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  button{
+    color: $teal;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.sign-in-cta{
+  text-transform: unset;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.password-requirements {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+
+  ul {
+    margin-top: 0.25rem;
+    margin-left: 1.5rem;
+    list-style-type: disc;
+
+    li {
+      margin-top: 0.125rem;
+    }
+  }
+}
+
+.skip-woa{
+  text-align: right;
+  padding: 20px 140px;
+  @media only screen and (max-width: 1100px){
+    padding: 20px 30px;
+  }
+  @include tab{
+    padding: 16px 16px !important;
+  }
+  .skip-btn{
+    margin-left: auto;
+    color: $blue;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    border: $blue solid 1px;
+    border-radius: 2rem;
+    padding: 8px 8px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.gbl-msg{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .form-message {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    &.success {
+      background-color: #e6f4ea;
+      color: #1e7e34;
+      border: 1px solid #c3e6cb;
+    }
+    &.error {
+      background-color: #fde8e8;
+      color: #c81e1e;
+      border: 1px solid #f5c6cb;
+    }
+  }
+}
+
+.forgot-password-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  }
+
+  .reset-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .back-to-login {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  }
+
+  .message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+
+    &.success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    &.error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  }
+}
+
+.reset-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .reset-password-container {
+    @extend .forgot-password-container;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+}
+
+.forgot-password-link {
+  background: none;
+  border: none;
+  color: $teal;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    color: darken($teal, 10%);
+  }
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.comm-cta {
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+
+.grp-form{
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
